@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Parallax from 'react-rellax'
 import './Homepage.css';
-import Logo from '../assets/VoteNetLogo.png'
-import BalletBox from '../assets/ballet.png'
-import Vote from '../assets/Vote.png'
-import Net from '../assets/Net.png'
-import triangle from '../assets/4.png'
-import About from '../assets/about.png'
-import Card1 from '../assets/card1.png'
-import Card2 from '../assets/card2.png'
-import Card3 from '../assets/card3.png'
+import Logo from '../../assets/VoteNetLogo.png'
+import BalletBox from '../../assets/ballet.png'
+import Vote from '../../assets/Vote.png'
+import Net from '../../assets/Net.png'
+import triangle from '../../assets/4.png'
+import About from '../../assets/about.png'
+import Card1 from '../../assets/card1.png'
+import Card2 from '../../assets/card2.png'
+import Card3 from '../../assets/card3.png'
 
 class HomePage extends Component {
   render() {
