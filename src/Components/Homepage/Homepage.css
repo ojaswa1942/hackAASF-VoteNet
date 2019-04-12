@@ -3,18 +3,8 @@
 html {
 	top: 0;
 	margin: 0;
+	height: 100%;
 	font-family: 'Raleway', sans-serif;
-}
-
-body {
-	top: 0;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-	height: 1900px;
-	background-image: url("../../assets/qwer.png");
-	background-repeat: no-repeat;
-
 }
 
 ::-webkit-scrollbar {
@@ -22,8 +12,15 @@ body {
 }
 
 .homepage {
+	top: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	height: 1900px;
 	width: 100%;
-	height: auto;
+	overflow: hidden;
+	background-image: url("../../assets/qwer.png");
+	background-repeat: no-repeat;
 }
 
 
@@ -149,7 +146,7 @@ i {
 
 .content {
 	position: absolute;
-	top:180%;
+	top:178%;
 	left: 10%;
 	right: 10%;
 	text-align: center;

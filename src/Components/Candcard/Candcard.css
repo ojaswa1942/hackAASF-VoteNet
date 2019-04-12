@@ -1,0 +1,27 @@
+.candcard {
+	display: inline-flex;
+	width: 90%;
+	height: auto;
+	justify-content: space-between;
+	box-shadow: -10px 15px 15px rgba(0,0,0,0.3);
+	margin: 10px 0px;
+	background-color: white;
+}
+
+.cand_logo {
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 90px;
+	width: 90px;
+	padding: 5px 20px;
+	border-radius: 50%;
+}
+
+.cand_name {
+	font-size: 30px;
+}
+
+.cand_count {
+	font-size: 30px;
+	padding: 5px 20px;
+}

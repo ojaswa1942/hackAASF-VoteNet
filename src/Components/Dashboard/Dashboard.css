@@ -1,0 +1,11 @@
+.dash_container {
+	background-color: rgba(10, 164, 186,0.1);
+	width: 100%;
+	height: auto;
+}
+
+.dash_head {
+	text-transform: uppercase;
+	font-size: 4rem;
+	padding-top: 15px;
+}
