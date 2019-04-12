@@ -1,0 +1,22 @@
+
+.vote_btn2 {
+  font-size: 90px;
+  border-radius: 6px;
+  text-decoration-style: none;
+  text-decoration: none;
+  list-style-type: none;
+  width: 400px;
+  margin: auto auto;
+  margin-top: 20%;
+  background-image: linear-gradient(to bottom right, #7430c3, #3b7ddc, #3b7ddc);
+  color: white;
+  box-shadow: -10px 15px 15px rgba(0,0,0,0.3);
+}
+
+.back {
+  position: absolute;
+  top:25px;
+  left: 1%;
+  z-index: 5;
+  color: black;
+}

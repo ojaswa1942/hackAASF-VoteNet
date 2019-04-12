@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Parallax from 'react-rellax'
 import './Homepage.css';
 import Logo from '../../assets/VoteNetLogo.png'
@@ -11,7 +12,7 @@ import Card1 from '../../assets/card1.png'
 import Card2 from '../../assets/card2.png'
 import Card3 from '../../assets/card3.png'
 
-class HomePage extends Component {
+class Homepage extends Component {
   render() {
     return (
     <div>
@@ -22,9 +23,9 @@ class HomePage extends Component {
 				</div>
 
 				<div className="nav_buttons">
-					<a href="#"><li>Home</li></a>
-					<a href="#"><li>About</li></a>
-					<a href="#"><li className="vote_btn">Vote</li></a>
+					<Link to="/"><li>Home</li></Link>
+					<Link to="/"><li>About</li></Link>
+					<Link to="/vote"><li className="vote_btn">Vote</li></Link>
 				</div>
 			</nav>
 
@@ -83,4 +84,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default Homepage;
