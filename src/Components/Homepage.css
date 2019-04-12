@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:600');
+
+html {
+	top: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+body {
+	top: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	height: 2050px;
+	background-image: url("../assets/qwer.png");
+	background-repeat: no-repeat;
+
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.homepage {
+	width: 100%;
+	height: auto;
+}
+
+
+.navbar {
+	width: 100%;
+	position: fixed;
+	top:2%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: auto;
+	z-index: 5;
+/*	transition: 1s;*/
+	
+}
+
+/*.navbar_scroll {
+	box-shadow: 0 10px 8px 0px rgba(0,0,0,.2);
+	background-image: linear-gradient(to right, rgba(118,46,193,0.8) , rgba(57,128,220,0.8));
+	transition: 0.2s;
+}*/
+
+.vote {
+	position: absolute;
+	top:25%;
+	left: 5%;
+	width: 36%;
+}
+
+.net {
+	position: absolute;
+	top:45%;
+	left:25%;
+	width: 26%;
+}
+
+.ballet1 {
+	width: 13%;
+	height: auto;
+	position: absolute;
+	top:20%;
+	right: 30%;
+	z-index: 1;
+}
+
+.ballet2 {
+	width: 13%;
+	height: auto;
+	position: absolute;
+	top:35%;
+	right: 25%;
+}
+
+a {
+	text-decoration-style: none;
+	text-decoration: none;
+	color: white;
+}
+
+.logo {
+	width: 80px;
+	float: left;
+	height: auto;
+	padding: 5px 30px;
+}
+
+.vote_btn {
+	border: 2px solid white;
+	border-radius: 6px;
+}
+
+.nav_buttons {
+	margin-right: 50px;
+	display:flex;
+	float: right;
+	list-style-type: none;
+	color: black;
+}
+
+li {
+	padding: 15px 30px;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+.head1 {
+	position: absolute;
+	color: white;
+	top:60%;
+	right: 25vh;
+	font-size: 100px;
+	z-index: 2;
+}
+
+.head2 {
+	position: absolute;
+	top:75%;
+	right: 20vh;
+	font-size: 60px;
+	z-index: 2;
+	color: white;
+}
+
+.social {
+	position: fixed;
+	bottom: 5vh;
+	left: 5vh;
+	display: inline-flex;
+	z-index: 10;
+}
+
+i {
+	padding: 0px 35px;
+	font-size: 3em;
+}
+
+.about_head
+{
+	position: absolute;
+	top:145%;
+	left: 32%
+}
+
+.content {
+	position: absolute;
+	top:160%;
+	left: 10%;
+	right: 10%;
+	text-align: center;
+	font-size: 30px;
+}
+
+
+
+.card1 {
+	position: absolute;
+	top:175%;
+	left: 5%;
+	width: 25%;
+	height: auto;
+}
+
+.card2 {
+	position: absolute;
+	top:175%;
+	left: 35%;
+	width: 25%;
+	height: auto;
+}
+
+.card3 {
+	position: absolute;
+	top:175%;
+	left:65%;
+	width: 25%;
+	height: auto;
+}
+
+
+.t1 {
+	position: absolute;
+	top:55%;
+	left: 1%;
+	width: 20%;
+	height: auto;
+}
+
+.t2 {
+	position: absolute;
+	top:80%;
+	left: 12%;
+	width: 10%;
+	height: auto;
+	z-index: -1;
+}
