@@ -28,11 +28,7 @@ class Constcard extends Component {
 				<div className="const_head">
 					{con}
 				</div>
-
 				<CandList cands={candidates} />
-
-
-
 			</div>
 		);
 	}
