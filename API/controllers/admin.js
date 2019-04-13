@@ -7,10 +7,10 @@ const key = new NodeRSA(priv_key);
 
 const getData = (req,res, db) =>{
 	var candData = {
-		UJJ05: {},
-		MUM04: {},
-		GND02: {},
-		BKN01: {}
+		UJJ05: [],
+		MUM04: [],
+		GND02: [],
+		BKN01: []
 	};
 	db('storage').select('*').where({name: 'didvote'})
 	.then(didVoteHash =>{
@@ -21,10 +21,11 @@ const getData = (req,res, db) =>{
 			db('candidates').select('*')
 			.then(cands => {
 				cands.forEach(value => {
-					candData[value.con][value.cid] = {
+					candData[value.con].push({
 						name: value.name,
-						votes: voteCount[value.con][value.cid]
-					}
+						votes: voteCount[value.con][value.cid],
+						symbol: value.symbol
+					})
 				})
 				return res.status(200).json(candData)
 			})
