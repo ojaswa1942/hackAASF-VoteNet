@@ -50,7 +50,10 @@ class Vote extends Component {
 		.then(data => {
 			this.setState({isLoading1: false, isLoading2: true});
 			this.updateVID(data);
-			console.log(data);
+			
+		})
+		.catch(err => {
+			this.setState({error: true, errorMes: err})
 		})
 	}
 
@@ -70,6 +73,12 @@ class Vote extends Component {
 							<Loader />
 							Please wait while we load
 						</div>
+				}
+				{(this.state.error)?
+					<div className='errorMes '>
+						{this.state.errorMes}
+					</div>
+					: null
 				}
 			</div>
 		);

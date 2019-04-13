@@ -64,45 +64,6 @@ const handleRegister = (req,res, db, bcrypt, xss) =>{
 		})
 	})
 		
-
-
-	// db.select('*').from('patients').where({email}).
-	// then((data) =>{
-	// 	if(data.length)
-	// 		res.status(400).json('User already registered!');
-	// 	else{
-	// 		bcrypt.hash(password, null, null, function(err, hash) {
-	// 			if(err) console.log(err);
-	// 			db.transaction(trx=>{
-	// 				return trx.insert({
-	// 					email: email, 
-	// 					name: name,
-	// 					gender: gender,
-	// 					address: address,
-	// 					number: number,
-	// 					pid: pid,
-	// 					dob: dob,
-	// 					hash: hash
-	// 				})
-	// 				.into('patients')
-	// 				.then(() => {
-	// 					console.log('Got here');
-	// 					return trx('verify')
-	// 					.insert({
-	// 						email: email,
-	// 						hash: verifyHash
-	// 					})
-	// 					.then(() =>{
-	// 						res.status(200).json('Sucessfully Registered. An email has been sent to '+email+' .');
-	// 						sendEmail(name, email, verifyHash, pid);
-	// 					})
-	// 					.then(trx.commit)
-	// 				}).catch(trx.rollback)
-	// 			})
-	// 			.catch(err => {console.log(err); res.status(400).json('Something went wrong!')});
-	// 		})
-	// 	}
-	// });
 }
 
 module.exports = {
