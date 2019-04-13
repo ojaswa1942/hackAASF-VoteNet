@@ -44,10 +44,28 @@ const handleRegister = (req,res, db, bcrypt, xss) =>{
 	console.log('voterData: ', voterData);
 	const enc = key.encrypt(voterData, 'base64');
 	console.log('enc: ', enc);
-	fs.writeFile(`../uploads/voters/${vid}.json`, enc, err => {
+	fs.writeFile(`./uploads/voters/${vid}.json`, enc, err => {
 		if(err)
 			console.log(err);
 	})
+	
+	// const dec = key.decrypt(enc, 'json')
+	// console.log('dec.vid: ', dec.vid);
+	ipfs.addFromFs('./uploads/voters', { recursive: true }, (err, result) => {
+		if (err) { throw err }
+		console.log(result)
+		db('storage').update({voters: result[result.length-1].hash})
+		.then(upd => {
+			res.status(200).json(result[result.length-1].hash)
+		})
+		.catch(err =>{
+			console.log(err);
+			return res.status(400).json('Some error occurred. Try again later');
+		})
+	})
+		
+
+
 	// db.select('*').from('patients').where({email}).
 	// then((data) =>{
 	// 	if(data.length)
