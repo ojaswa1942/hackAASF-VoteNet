@@ -1,0 +1,16 @@
+.OVM-head {
+	font-size: 50px;
+	padding: 20px 20px;
+	color: white;
+}
+
+.OVM-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	border: 1px solid black;
+	width: 30%;
+	margin: 100px 500px;
+	background-image: linear-gradient(to bottom right, #7430c3, #3b7ddc, #3b7ddc);
+	padding: 10px 0px;
+}

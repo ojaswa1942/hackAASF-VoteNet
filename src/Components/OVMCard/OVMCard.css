@@ -1,0 +1,31 @@
+.OVMC-container {
+	display: flex;
+	width: 90%;
+	height: auto;
+	justify-content: space-between;
+	box-shadow: -10px 10px 15px rgba(0,0,0,0.3);
+	background-color: white;
+	margin: 10px auto;
+}
+
+.party_logo {
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 60px;
+	width: 60px;
+	padding: 5px 20px;
+	border-radius: 50%;
+}
+
+.party_name {
+	font-size: 30px;
+	margin-right: 150px;
+}
+
+.OVM-btn {
+	margin: auto auto;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: black;
+}
