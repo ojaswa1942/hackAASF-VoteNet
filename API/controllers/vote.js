@@ -96,28 +96,8 @@ const handleVoteResponse = (req,res,db)=>{
 					})
 				})
 			})
-
-			
-			// if()
-			// 	return res.status(401).json('Already voted');
-			// else {
-			// 	db('candidates').select('*').where({con: constituency})
-			// 	.then(cans => {
-			// 		let data = {
-			// 			userData,
-			// 			cans
-			// 		};
-			// 		return res.status(200).json(data);
-			// 	})
-			// }
 		})
 	})
-	
-	//get req vote
-	//Get & Decrypt votes & didvote
-	//update votes
-	//update didvote
-	//Encrypt & upload votes & didvote
 }
 
 module.exports={
