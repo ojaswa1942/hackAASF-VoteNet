@@ -54,7 +54,7 @@ const handleRegister = (req,res, db, bcrypt, xss) =>{
 	ipfs.addFromFs('./uploads/voters', { recursive: true }, (err, result) => {
 		if (err) { throw err }
 		console.log(result)
-		db('storage').update({voters: result[result.length-1].hash})
+		db('storage').update({hash: result[result.length-1].hash}).where({name: 'voters'})
 		.then(upd => {
 			res.status(200).json(result[result.length-1].hash)
 		})
