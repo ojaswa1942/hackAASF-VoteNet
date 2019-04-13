@@ -5,16 +5,15 @@ import btn from '../../assets/btn.png'
 
 
 class OVMCard  extends Component {
+	constructor(props){
+		super(props);
+
+	}
 	render() {
 		return(
-			<div className="OVMC-container">
-				
-				<img class="party_logo" alt="party-logo" src={logo}></img>
-
-				<p className="party_name">Manish Mavi</p>
-
-				<img className="OVM-btn" alt="OVM-btn" src={btn}></img>
-
+			<div value={this.props.cid} onClick={() => {this.props.handleVoteReq(this.props.cid)}} className="OVMC-container pointer dim">
+				<img class="party_logo" alt="party-logo" src={this.props.symbol}></img>
+				<p className="party_name">{this.props.name}</p>
 			</div>
 		);
 	}

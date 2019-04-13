@@ -19,3 +19,43 @@
   z-index: 5;
   color: black;
 }
+
+.form_container {
+  margin-top: 10%;
+  width: 20%;
+  height: auto;
+  margin-left: 40%;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.details {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.dt {
+  border-bottom: 1px solid black;
+  padding: 3px 0px;
+}
+
+.form-head {
+  font-size: 30px;
+}
+
+.vf-btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  order:2;
+  background-color: green;
+  width: 300px;
+  font-size: 40px;
+  color: white;
+}
