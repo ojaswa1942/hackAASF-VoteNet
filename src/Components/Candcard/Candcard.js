@@ -7,7 +7,7 @@ class Candcard extends Component {
 		return (
 			<div className="candcard">
 
-				<img class="cand_logo" src={logo}></img>
+				<img class="cand_logo" alt="cand-logo" src={logo}></img>
 
 				<p className="cand_name">Manish Mavi</p>
 

@@ -1,4 +1,9 @@
 const fetch = require('node-fetch');
+const NodeRSA = require('node-rsa');
+const serviceAcc = require('../service-accounts.json');
+
+const priv_key = serviceAcc.key;
+const key = new NodeRSA(priv_key);
 
 const handleVoteRequest = (req,res,db)=>{
 	const {vid} = req.body;
@@ -10,13 +15,18 @@ const handleVoteRequest = (req,res,db)=>{
 			return res.status(404).json('User not found')
 		else{
 			fetch(`https://ipfs.premsarswat.me/ipfs/${results[0].hash}/${vid}.json`)
-			.then(res => res.json())
+			.then(encres => encres.text())
+			.then(res => {
+				console.log('res: ', res);
+				return key.decrypt(res, 'json');
+			})
 			.then(userData => {
 				const constituency = userData.con;
 				db('storage').select('*').where({name: 'didvote'})
 				.then(didVoteHash =>{
 					fetch(`https://ipfs.premsarswat.me/ipfs/${didVoteHash[0].hash}/didvote.json`)
-					.then(res2 => res2.json())
+					.then(encres2 => encres2.text())
+					.then(res2 => key.decrypt(res2, 'json'))
 					.then(didVoteData => {
 						if(didVoteData[vid])
 							return res.status(401).json('Already voted');
