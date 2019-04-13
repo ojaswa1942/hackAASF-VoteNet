@@ -1,8 +1,10 @@
 import face_recognition
 from flask import Flask, jsonify, request, redirect
 from facerec_from_webcam import startRec
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def startFaceRec():

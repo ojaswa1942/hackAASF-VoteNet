@@ -1,0 +1,105 @@
+.loaderClass{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spinner_on_verification {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: contanim 2s linear infinite;
+          animation: contanim 2s linear infinite;
+}
+
+.ver_load_svg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.ver_load_svg:nth-child(1) circle {
+  stroke: white;
+  stroke-dasharray: 1, 300;
+  stroke-dashoffset: 0;
+  -webkit-animation: strokeanim 3s calc(.2s * (1)) ease infinite;
+          animation: strokeanim 3s calc(.2s * (1)) ease infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.ver_load_svg:nth-child(2) circle {
+  stroke: black;
+  stroke-dasharray: 1, 300;
+  stroke-dashoffset: 0;
+  -webkit-animation: strokeanim 3s calc(.2s * (2)) ease infinite;
+          animation: strokeanim 3s calc(.2s * (2)) ease infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.ver_load_svg:nth-child(3) circle {
+  stroke: gray;
+  stroke-dasharray: 1, 300;
+  stroke-dashoffset: 0;
+  -webkit-animation: strokeanim 3s calc(.2s * (3)) ease infinite;
+          animation: strokeanim 3s calc(.2s * (3)) ease infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.ver_load_svg:nth-child(4) circle {
+  stroke: #fff;
+  stroke-dasharray: 1, 300;
+  stroke-dashoffset: 0;
+  -webkit-animation: strokeanim 3s calc(.2s * (4)) ease infinite;
+          animation: strokeanim 3s calc(.2s * (4)) ease infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+@-webkit-keyframes strokeanim {
+  0% {
+    stroke-dasharray: 1, 300;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -58.548324585;
+  }
+  100% {
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -175.6449737549;
+  }
+}
+
+@keyframes strokeanim {
+  0% {
+    stroke-dasharray: 1, 300;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -58.548324585;
+  }
+  100% {
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -175.6449737549;
+  }
+}
+@-webkit-keyframes contanim {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes contanim {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

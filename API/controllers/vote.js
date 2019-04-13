@@ -23,7 +23,11 @@ const handleVoteRequest = (req,res,db)=>{
 						else {
 							db('candidates').select('*').where({con: constituency})
 							.then(cans => {
-								return res.status(200).json(cans);
+								let data = {
+									userData,
+									cans
+								};
+								return res.status(200).json(data);
 							})
 						}
 					})
@@ -43,6 +47,10 @@ const handleVoteRequest = (req,res,db)=>{
 }
 
 const handleVoteResponse = (req,res,db)=>{
+	const {cid, vid} = req.body;
+	if(!vid || !cid)
+		return res.status(400).json('Information Insufficient');
+	
 	//get req vote
 	//Get & Decrypt votes & didvote
 	//update votes
