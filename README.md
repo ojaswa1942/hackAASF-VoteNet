@@ -4,6 +4,9 @@
 1. According to the present Indian voting system, people are only allowed to vote from their own constituency, which makes it difficult for voters to reach back their hometowns, and in most cases, it is impossible for the voter to make a vote. This inability to vote siginificantly reduces the polling percentage.
 2. Transparency and data security
 
+**Etereum**
+Ethereum is an open source, public, blockchain-based distributed computing platform and operating system featuring smart contract functionality. It supports a modified version of Nakamoto consensus via transaction-based state transitions.
+
 **Solution**:
 We propose a system that allow voters to vote remotely by visiting a VoteNet booth nearest to them. 
 
