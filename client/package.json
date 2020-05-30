@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "react": "^16.13.1",
     "react-awesome-modal": "^2.0.5",
     "react-dom": "^16.13.1",

@@ -62,7 +62,7 @@ app.get('/api/checkToken', withAuth, (req, res) => {
 
 // app.post('/api/upload', upload.single('file'), (req, res) =>{hUpload.handleUpload(req, res, db)});
 
-const PORT = process.env.PORT || 3010
+const PORT = process.env.PORT || 3011
 app.listen(PORT, ()=>{
 	console.log(`We are on on port ${PORT}!`);
 })
