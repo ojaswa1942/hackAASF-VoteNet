@@ -1,7 +1,8 @@
 const serviceAcc = require('../service-accounts.json');
 const fs = require('fs');
-const ipfsClient = require('ipfs-http-client');
 const NodeRSA = require('node-rsa');
+const ipfsClient = require('ipfs-http-client');
+const { globSource } = ipfsClient;
 
 const ipfs = ipfsClient({
   host: '127.0.0.1',
@@ -9,7 +10,7 @@ const ipfs = ipfsClient({
   protocol: 'http'
 });
 
-const handleRegister = (req,res, db, bcrypt, xss) =>{
+const handleRegister = async (req,res, db, bcrypt, xss) =>{
 	const xssOptions = {
 		whiteList: [],
 		stripIgnoreTag: [],
@@ -51,6 +52,9 @@ const handleRegister = (req,res, db, bcrypt, xss) =>{
 	
 	// const dec = key.decrypt(enc, 'json')
 	// console.log('dec.vid: ', dec.vid);
+	for await (const file of ipfs.add(globSource('./uploads/voters', { recursive: true }))) {
+	  console.log(file);
+	}
 	ipfs.addFromFs('./uploads/voters', { recursive: true }, (err, result) => {
 		if (err) { throw err }
 		console.log(result)
