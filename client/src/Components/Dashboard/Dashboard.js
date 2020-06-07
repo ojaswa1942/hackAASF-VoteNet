@@ -115,11 +115,6 @@ class Dashboard extends Component {
 						<p className="cand_name">{adminData['UJJ05'][4].name}</p>
 						<p className="cand_count">{adminData['UJJ05'][4].votes}</p>
 					</div>
-					<div className="candcard">
-						<img className="cand_logo" alt="cand-logo" src={adminData['UJJ05'][5].symbol}></img>
-						<p className="cand_name">{adminData['UJJ05'][5].name}</p>
-						<p className="cand_count">{adminData['UJJ05'][5].votes}</p>
-					</div>
 				</div>
 				<div className="constcard">
 					<div className="const_head">
@@ -149,11 +144,6 @@ class Dashboard extends Component {
 						<img className="cand_logo" alt="cand-logo" src={adminData['MUM04'][4].symbol}></img>
 						<p className="cand_name">{adminData['MUM04'][4].name}</p>
 						<p className="cand_count">{adminData['MUM04'][4].votes}</p>
-					</div>
-					<div className="candcard">
-						<img className="cand_logo" alt="cand-logo" src={adminData['MUM04'][5].symbol}></img>
-						<p className="cand_name">{adminData['MUM04'][5].name}</p>
-						<p className="cand_count">{adminData['MUM04'][5].votes}</p>
 					</div>
 				</div>
 				<div className="constcard">
@@ -185,11 +175,6 @@ class Dashboard extends Component {
 						<p className="cand_name">{adminData['GND02'][4].name}</p>
 						<p className="cand_count">{adminData['GND02'][4].votes}</p>
 					</div>
-					<div className="candcard">
-						<img className="cand_logo" alt="cand-logo" src={adminData['GND02'][5].symbol}></img>
-						<p className="cand_name">{adminData['GND02'][5].name}</p>
-						<p className="cand_count">{adminData['GND02'][5].votes}</p>
-					</div>
 				</div>
 				<div className="constcard">
 					<div className="const_head">
@@ -214,16 +199,6 @@ class Dashboard extends Component {
 						<img className="cand_logo" alt="cand-logo" src={adminData['BKN01'][3].symbol}></img>
 						<p className="cand_name">{adminData['BKN01'][3].name}</p>
 						<p className="cand_count">{adminData['BKN01'][3].votes}</p>
-					</div>
-					<div className="candcard">
-						<img className="cand_logo" alt="cand-logo" src={adminData['BKN01'][4].symbol}></img>
-						<p className="cand_name">{adminData['BKN01'][4].name}</p>
-						<p className="cand_count">{adminData['BKN01'][4].votes}</p>
-					</div>
-					<div className="candcard">
-						<img className="cand_logo" alt="cand-logo" src={adminData['BKN01'][5].symbol}></img>
-						<p className="cand_name">{adminData['BKN01'][5].name}</p>
-						<p className="cand_count">{adminData['BKN01'][5].votes}</p>
 					</div>
 				</div>
 			</div>
