@@ -53,10 +53,11 @@ class Vote extends Component {
 		fetch('http://localhost:5001/')
 		.then(res => res.json())
 		.then(data => {
+			console.log(data);
 			this.setState({isLoading1: false});
 			this.updateVID(data);
 		  	let error = false;
-			fetch('https://votenet.premsarswat.me/api/vote', {
+			fetch('https://votenet.ojaswa.com/api/vote', {
 		      method: 'post',
 		      headers: {'Content-type': 'application/json'},
 		      body: JSON.stringify({
@@ -78,7 +79,7 @@ class Vote extends Component {
 				});
 			})
 			.catch(err => {
-				this.setState({error: true, errorMes: err})
+				this.setState({error: true, errorMes: err.toString()})
 			})
 		})
 		.catch(err => {

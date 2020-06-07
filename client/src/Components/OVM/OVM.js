@@ -16,7 +16,7 @@ class OVM  extends Component {
 	handleVoteReq = (cid) => {
 		this.setState({voteReq: true});
 		let error = false;
-			fetch('https://votenet.premsarswat.me/api/voted', {
+			fetch('https://votenet.ojaswa.com/api/voted', {
 		      method: 'post',
 		      headers: {'Content-type': 'application/json'},
 		      body: JSON.stringify({

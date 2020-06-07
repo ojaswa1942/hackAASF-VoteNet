@@ -2,7 +2,7 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-const mysql = require('mysql');
+const pg = require('pg');
 const multer = require('multer');
 const path = require('path');
 const xss = require('xss');
@@ -19,9 +19,10 @@ const serviceAcc = require('./service-accounts.json');
 
 //require("dotenv").config();
 const db = knex({
-  client: 'mysql',
+  client: 'pg',
   connection: {
     host : serviceAcc.host,
+    port: serviceAcc.port,
     user : serviceAcc.user,
     password : serviceAcc.password,
     database : serviceAcc.database

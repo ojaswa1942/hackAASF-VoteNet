@@ -14,7 +14,7 @@ const getData = (req,res, db) =>{
 	};
 	db('storage').select('*').where({name: 'didvote'})
 	.then(didVoteHash =>{
-		fetch(`https://ipfs.premsarswat.me/ipfs/${didVoteHash[0].hash}/votes.json`)
+		fetch(`https://ipfs.ojaswa.com/ipfs/${didVoteHash[0].hash}/votes.json`)
 		.then(encres3 => encres3.text())
 		.then(res3 => key.decrypt(res3, 'json'))
 		.then(voteCount => {

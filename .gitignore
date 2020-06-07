@@ -3,7 +3,8 @@
 **service-accounts.json
 /.pnp
 .pnp.js
-
+notes.md
+**uploads
 # testing
 /coverage
 

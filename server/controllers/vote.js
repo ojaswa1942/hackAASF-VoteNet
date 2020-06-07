@@ -3,6 +3,7 @@ const NodeRSA = require('node-rsa');
 const serviceAcc = require('../service-accounts.json');
 const fs = require('fs');
 const ipfsClient = require('ipfs-http-client');
+
 const ipfs = ipfsClient({
   host: '127.0.0.1',
   port: 5001,
@@ -21,7 +22,7 @@ const handleVoteRequest = (req,res,db)=>{
 		if(!results.length)
 			return res.status(404).json('User not found')
 		else{
-			fetch(`https://ipfs.premsarswat.me/ipfs/${results[0].hash}/${vid}.json`)
+			fetch(`https://ipfs.ojaswa.com/ipfs/${results[0].hash}/${vid}.json`)
 			.then(encres => encres.text())
 			.then(res => {
 				console.log('res: ', res);
@@ -31,7 +32,7 @@ const handleVoteRequest = (req,res,db)=>{
 				const constituency = userData.con;
 				db('storage').select('*').where({name: 'didvote'})
 				.then(didVoteHash =>{
-					fetch(`https://ipfs.premsarswat.me/ipfs/${didVoteHash[0].hash}/didvote.json`)
+					fetch(`https://ipfs.ojaswa.com/ipfs/${didVoteHash[0].hash}/didvote.json`)
 					.then(encres2 => encres2.text())
 					.then(res2 => key.decrypt(res2, 'json'))
 					.then(didVoteData => {
@@ -65,24 +66,29 @@ const handleVoteResponse = (req,res,db)=>{
 	
 	db('storage').select('*').where({name: 'didvote'})
 	.then(didVoteHash =>{
-		fetch(`https://ipfs.premsarswat.me/ipfs/${didVoteHash[0].hash}/didvote.json`)
+		fetch(`https://ipfs.ojaswa.com/ipfs/${didVoteHash[0].hash}/didvote.json`)
 		.then(encres2 => encres2.text())
 		.then(res2 => key.decrypt(res2, 'json'))
 		.then(didVoteData => {
 			didVoteData[vid] = true;
 			const enc = key.encrypt(didVoteData, 'base64');
-			fs.writeFile(`./uploads/storage/didvote.json`, enc, err => {
+			fs.writeFileSync(`./uploads/storage/didvote.json`, enc, err => {
 				if(err)
 					console.log(err);
 			})
 
-			fetch(`https://ipfs.premsarswat.me/ipfs/${didVoteHash[0].hash}/votes.json`)
+			fetch(`https://ipfs.ojaswa.com/ipfs/${didVoteHash[0].hash}/votes.json`)
 			.then(encres3 => encres3.text())
 			.then(res3 => key.decrypt(res3, 'json'))
 			.then(voteCount => {
-				console.log(voteCount[con][cid]);
 				voteCount[con][cid] += 1; 
-				console.log(voteCount[con][cid]);
+				
+				const enc = key.encrypt(voteCount, 'base64');
+				fs.writeFileSync(`./uploads/storage/votes.json`, enc, err => {
+					if(err)
+						console.log(err);
+				});
+
 				ipfs.addFromFs('./uploads/storage', { recursive: true }, (err, result) => {
 					if (err) { throw err }
 					console.log(result)

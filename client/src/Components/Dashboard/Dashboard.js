@@ -50,7 +50,7 @@ class Dashboard extends Component {
 
 	requestData = () =>{
 		let err=false;
-		fetch('https://votenet.premsarswat.me/api/admin')
+		fetch('https://votenet.ojaswa.com/api/admin')
 		.then(response => {
 	  		if(response.status!==200)
 	    		err=true;

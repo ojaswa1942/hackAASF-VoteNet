@@ -57,7 +57,7 @@ const handleUpload = (req,res, db) =>{
                 isDoc: true,
                 userReports: reports,
                 hash: files[0].hash,
-                link: 'https://ipfs.premsarswat.me/ipfs/'+files[0].hash
+                link: 'https://ipfs.ojaswa.com/ipfs/'+files[0].hash
               }
               return res.status(200).json(userData);
             })
