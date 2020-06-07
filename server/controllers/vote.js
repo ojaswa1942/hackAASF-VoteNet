@@ -3,6 +3,7 @@ const NodeRSA = require('node-rsa');
 const serviceAcc = require('../service-accounts.json');
 const fs = require('fs');
 const ipfsClient = require('ipfs-http-client');
+const { globSource } = ipfsClient;
 
 const ipfs = ipfsClient({
   host: '127.0.0.1',
@@ -90,7 +91,7 @@ const handleVoteResponse = (req,res,db)=>{
 				});
 
 				let result = [];
-				for await (const file of ipfs.add(globSource('./uploads/voters', { recursive: true }))) {
+				for await (const file of ipfs.add(globSource('./uploads/storage', { recursive: true }))) {
 				  result.push(file);
 				}
 				console.log(result)
