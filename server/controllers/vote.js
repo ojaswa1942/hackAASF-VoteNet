@@ -80,7 +80,7 @@ const handleVoteResponse = (req,res,db)=>{
 			fetch(`https://ipfs.ojaswa.com/ipfs/${didVoteHash[0].hash}/votes.json`)
 			.then(encres3 => encres3.text())
 			.then(res3 => key.decrypt(res3, 'json'))
-			.then(voteCount => {
+			.then(async voteCount => {
 				voteCount[con][cid] += 1; 
 				
 				const enc = key.encrypt(voteCount, 'base64');
@@ -89,17 +89,18 @@ const handleVoteResponse = (req,res,db)=>{
 						console.log(err);
 				});
 
-				ipfs.addFromFs('./uploads/storage', { recursive: true }, (err, result) => {
-					if (err) { throw err }
-					console.log(result)
-					db('storage').update({hash: result[result.length-1].hash}).where({name: 'didvote'})
-					.then(upd => {
-						res.status(200).json(result[result.length-1].hash)
-					})
-					.catch(err =>{
-						console.log(err);
-						return res.status(400).json('Some error occurred. Try again later');
-					})
+				let result = [];
+				for await (const file of ipfs.add(globSource('./uploads/voters', { recursive: true }))) {
+				  result.push(file);
+				}
+				console.log(result)
+				db('storage').update({hash: result[result.length-1].cid.toString()}).where({name: 'didvote'})
+				.then(upd => {
+					res.status(200).json(result[result.length-1].cid.toString())
+				})
+				.catch(err =>{
+					console.log(err);
+					return res.status(400).json('Some error occurred. Try again later');
 				})
 			})
 		})

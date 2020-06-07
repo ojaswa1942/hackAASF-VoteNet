@@ -52,22 +52,19 @@ const handleRegister = async (req,res, db, bcrypt, xss) =>{
 	
 	// const dec = key.decrypt(enc, 'json')
 	// console.log('dec.vid: ', dec.vid);
+	let result = [];
 	for await (const file of ipfs.add(globSource('./uploads/voters', { recursive: true }))) {
-	  console.log(file);
+	  result.push(file);
 	}
-	ipfs.addFromFs('./uploads/voters', { recursive: true }, (err, result) => {
-		if (err) { throw err }
-		console.log(result)
-		db('storage').update({hash: result[result.length-1].hash}).where({name: 'voters'})
-		.then(upd => {
-			res.status(200).json(result[result.length-1].hash)
-		})
-		.catch(err =>{
-			console.log(err);
-			return res.status(400).json('Some error occurred. Try again later');
-		})
+	console.log(result);
+	db('storage').update({hash: result[result.length-1].cid.toString()}).where({name: 'voters'})
+	.then(upd => {
+		res.status(200).json(result[result.length-1].cid.toString());
 	})
-		
+	.catch(err =>{
+		console.log(err);
+		return res.status(400).json('Some error occurred. Try again later');
+	})
 }
 
 module.exports = {
